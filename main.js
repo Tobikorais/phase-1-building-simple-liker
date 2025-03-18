@@ -4,8 +4,28 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+// Add a modal element to the DOM
+document.addEventListener('DOMContentLoaded', () => {
+  // Create the modal element
+  const modal = document.createElement('div');
+  modal.id = 'modal';
+  modal.style.display = 'none'; // Hidden by default
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <p>Modal Content</p>
+    </div>
+  `;
 
+  // Append the modal to the body
+  document.body.appendChild(modal);
 
+  // Add event listener to close the modal
+  const closeButton = modal.querySelector('.close-button');
+  closeButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+});
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
